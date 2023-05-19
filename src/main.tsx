@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { BaseGoerli } from "@thirdweb-dev/chains";
 import "./styles/globals.css";
 import { Toaster } from "./components/ui/Toaster";
 import { getGasless } from "./utils/getGasless";
@@ -32,7 +33,7 @@ const activeChain = getChainBySlug(network); */
 
 root.render(
   <React.StrictMode>
-    <ThirdwebProvider activeChain={chain} sdkOptions={sdkOptions}>
+    <ThirdwebProvider activeChain={BaseGoerli} sdkOptions={sdkOptions}>
       <Toaster />
       <App />
     </ThirdwebProvider>
